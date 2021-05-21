@@ -57,7 +57,7 @@ namespace Sample.ExternalIdentities
             // Check the domain in the allowed list
             if (!allowedDomain.Contains(domain.ToLower()))
             {
-                return (ActionResult)new OkObjectResult(new ResponseContent("ShowBlockPage", $"You must have an account from '{string.Join(", ", allowedDomain)}' to register as an external user for Contoso."));
+                return (ActionResult)new OkObjectResult(new ResponseContent("ShowBlockPage", $"You must have an account from '{string.Join(", ", allowedDomain)}' to register as an external user for Etat de Vaud - DFJC - DGEO - DP - CIPEO."));
             }
 
             // If displayName claim doesn't exist, or it is too short, show validation error message. So, user can fix the input data.
