@@ -61,10 +61,10 @@ namespace Sample.ExternalIdentities
             }
 
             // If displayName claim doesn't exist, or it is too short, show validation error message. So, user can fix the input data.
-            if (data.displayName == null || data.displayName.ToString().Length < 5)
-            {
-                return (ActionResult)new BadRequestObjectResult(new ResponseContent("ValidationError", "Please provide a Display Name with at least five characters."));
-            }
+            //if (data.displayName == null || data.displayName.ToString().Length < 5)
+            //{
+            //    return (ActionResult)new BadRequestObjectResult(new ResponseContent("ValidationError", "Please provide a Display Name with at least five characters."));
+            //}
 
             // Input validation passed successfully, return `Allow` response.
             // TO DO: Configure the claims you want to return
