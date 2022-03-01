@@ -19,7 +19,7 @@ namespace Sample.ExternalIdentities
             ILogger log)
         {
             // Allowed domains
-            string[] allowedDomain = { "gmail.com", "mtf.ch" };
+            string[] allowedDomain = { "gmail.com", "vd.ch" };
 
             // Check HTTP basic authorization
             if (!Authorize(req, log))
