@@ -5,7 +5,7 @@ languages:
   - .Net core
 products:
   - azure-active-directory
-description: "A sample to demonstrate how to validating a sign-up using a C# Azure Function and API connectors"
+description: "A sample to demonstrate how to validating a sign-up user flow using a C# Azure Function and API connectors"
 urlFragment: "active-directory-dotnet-external-identities-api-connector-azure-function-validate"
 ---
 
@@ -33,7 +33,7 @@ The API is implemented using an Azure Function HTTP trigger in C# .NET Core.
 
 ## Key concepts
 
-API connectors provide you with a way to modify and extend sign-up flows by leveraging web APIs. API connectors are available in both [guest user self-service sign up](https://docs.microsoft.com/azure/active-directory/external-identities/api-connectors-overview) and [Azure AD B2C sign-up user flows](https://docs.microsoft.com/azure/active-directory-b2c/add-api-connector).
+API connectors provide you with a way to modify and extend sign-up flows by leveraging web APIs. API connectors are available in both [guest user self-service sign up](https://docs.microsoft.com/azure/active-directory/external-identities/api-connectors-overview) and [Azure AD B2C sign-up user flows](https://docs.microsoft.com/azure/active-directory-b2c/api-connectors-overview?pivots=b2c-user-flow).
 
 This examples uses an API connector to limit sign-ups to only specific email domains, fabrikam.com and fabricam.com. This is easily modifiable in `SignUpValidation.cs` and can be extended limit sign ups to any particular email domain or set of email domains. Further, the API connector in this sample is used to perform input validation on `Display Name` by ensuring a user provides a value of at least 4 characters.
 
@@ -102,8 +102,8 @@ Follow the steps outlined in "Add an API connector" for [guest user self-service
 
 Your API connector configuration should look like the following:
 
-<img src="images/api-connector-configuration.png" alt="API connector configuration"
-    title="API connector configuration" width="400" />
+<img src="media/api-connector-configuration.png" alt="API connector configuration"
+    title="API connector configuration" width="500" />
 
 - **Endpoint URL** is the Function URL you copied earlier.
 - **Username** and **Password** are the Username and Passwords you defined as environment variables earlier.
@@ -111,7 +111,9 @@ Your API connector configuration should look like the following:
 ### Enable the API connector
 
 In the **API connector** settings for your user flow, you can select the API connector to be invoked at either step:
-![API connector selected](images/api-connector-selected.png)
+
+<img src="media/api-connector-selected.png" alt="API connector select"
+    title="API connector selection" width="800" />
 
 - **After signing in with an identity provider** - if enabled for this step, the API connector will only allow users with an email ending in `@fabrikam.com`. Note that for Azure AD B2C, this does not apply to local accounts.
 - **Before creating the user** - if enabled for this step, the API connector will only allow users with an email ending in `@fabrikam.com` _and_ check whether the `Display Name` attribute is of at least length 5. Note, the `Display Name` has to be selected in **User attributes** for the user flow.
